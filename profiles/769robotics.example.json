@@ -1,0 +1,113 @@
+{
+  "profile_name": "769robotics",
+  "status": "example-unbound",
+  "storage_contract": {
+    "github": "Business workflow instructions, orchestrator, and profile binding contract only",
+    "google_drive": "All references, templates, seller/customer records, prices, project state, payment evidence, audit logs, and business-profile values",
+    "activation": "Not active; requires reviewed source bindings and explicit activation"
+  },
+  "business_profile_drive_document": {
+    "file_id": null,
+    "url": null
+  },
+  "drive": {
+    "document_root": {
+      "file_id": null,
+      "url": null
+    },
+    "customer_quotation_root": {
+      "file_id": null,
+      "url": null
+    },
+    "customer_contract_root": {
+      "file_id": null,
+      "url": null
+    },
+    "rental_template_library": {
+      "file_id": null,
+      "url": null
+    },
+    "rental_template_readme": {
+      "file_id": null,
+      "url": null
+    },
+    "acceptance_template": {
+      "file_id": null,
+      "url": null
+    },
+    "rental_quotation_template": {
+      "file_id": null,
+      "url": null
+    },
+    "sales_quotation_template": {
+      "file_id": null,
+      "url": null
+    },
+    "rental_price_sheet": {
+      "file_id": null,
+      "url": null
+    },
+    "sales_price_sheet": {
+      "file_id": null,
+      "url": null,
+      "price_tab_gid": null
+    },
+    "rental_contract_master": {
+      "file_id": null,
+      "url": null
+    },
+    "purchase_contract_template": {
+      "file_id": null,
+      "url": null
+    },
+    "rental_project_tracker": {
+      "file_id": null,
+      "url": null
+    },
+    "customer_document_registry": {
+      "file_id": null,
+      "url": null
+    }
+  },
+  "references": {
+    "acceptance_minutes_guide": {
+      "file_id": null,
+      "url": null,
+      "status": "drive-guide-located-and-read-pending-policy-reconciliation"
+    },
+    "tracker_schema": {
+      "file_id": null,
+      "url": null,
+      "status": "source-inspected-drive-binding-unverified"
+    },
+    "contract_discovery": {
+      "file_id": null,
+      "url": null,
+      "status": "source-inspected-drive-binding-unverified"
+    },
+    "customer_specific_exceptions": {
+      "file_id": null,
+      "url": null,
+      "status": "must-resolve-in-drive"
+    }
+  },
+  "seller": {
+    "legal_name": null,
+    "representative_name": null
+  },
+  "runtime": {
+    "rental_reminder": null,
+    "schedule_workflow": "schedule-769robotics-events"
+  },
+  "rules": {
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "requirements": [
+    "Fill live values only from a verified Drive business profile at runtime; do not commit customer or reference content.",
+    "Read the relevant source metadata and content before use; an empty or conflicting binding blocks the dependent operation.",
+    "Do not assume a repository checkout automatically installs or activates these workflows.",
+    "Do not infer write authority from this configuration or create a replacement reminder when the existing binding is missing.",
+    "The seller representative title remains the fixed workflow rule Giám đốc; this profile does not override business rules.",
+    "rules.timezone and runtime.schedule_workflow document fixed retained workflow constraints; they are not configurable business-policy overrides."
+  ]
+}

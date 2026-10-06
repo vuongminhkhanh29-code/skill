@@ -1,0 +1,12 @@
+# Runtime and local working data must stay out of GitHub
+.env
+.env.*
+*.local.json
+*.local.yaml
+*.local.yml
+runtime/
+private/
+customer-data/
+drive-exports/
+source-snapshots/
+

@@ -1,0 +1,131 @@
+{
+  "format_version": 1,
+  "prepared_on": "2026-10-04",
+  "status": "repository-review-pilot",
+  "github_repository": "https://github.com/vuongminhkhanh29-code/skill",
+  "visibility_required": "public-explicitly-authorized",
+  "source_skills": [
+    {
+      "name": "draft-769robotics-contract",
+      "source_version": 23,
+      "source_main_sha256": "9a7ffddd444dd816468a3ec3f43bfb378d27c0ed323ea5bf4fc5d1a9d3f631ae",
+      "target": "skills/draft-769robotics-contract/SKILL.md",
+      "adaptation": "sanitized-main-with-external-drive-bindings",
+      "status": "prepared-not-activated"
+    },
+    {
+      "name": "manage-769robotics-deals",
+      "source_version": 4,
+      "source_main_sha256": "d04a5714a86eb770d0c64a3dfe1d3b3af4bbb75516e9fff32ade4ef4c6169f98",
+      "target": "skills/manage-769robotics-deals/SKILL.md",
+      "adaptation": "sanitized-main-with-external-drive-bindings",
+      "status": "prepared-not-activated"
+    },
+    {
+      "name": "769robotics-quotation-rules",
+      "source_version": 4,
+      "source_main_sha256": "aa205bad98b26f8b18b3f706ffbd6e23b78086ee71e2b104423bc764ab863edb",
+      "target": "skills/769robotics-quotation-rules/SKILL.md",
+      "adaptation": "sanitized-main-with-external-drive-bindings",
+      "status": "prepared-not-activated"
+    }
+  ],
+  "new_workflow": "orchestrate-769robotics",
+  "file_inventory": [
+    {
+      "path": ".gitignore",
+      "bytes": 174,
+      "sha256": "a6264c1200eb24183908aaf7c9d28527e188bce702533c9f77a280f742c1d8ba"
+    },
+    {
+      "path": "MIGRATION.md",
+      "bytes": 7459,
+      "sha256": "91420f2290f10bc93fe90941ca7a9bb98dd2425812b508806fcba062a0652404"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2064,
+      "sha256": "6cb6a49d5e346bfca2dcba2800f7627836fcc98aaf02396f9d577170f9dd6ba4"
+    },
+    {
+      "path": "profiles/769robotics.example.json",
+      "bytes": 3279,
+      "sha256": "12dbe4f9e07d576aa0b7bc9811ffb2ca03dc778a4de5cadd3f52f72b4858ce8f"
+    },
+    {
+      "path": "skills/769robotics-quotation-rules/SKILL.md",
+      "bytes": 3838,
+      "sha256": "093f5278b8a2de119f91731b44dc13ac54220fb18d760ef07ad9b64aab37110a"
+    },
+    {
+      "path": "skills/draft-769robotics-contract/SKILL.md",
+      "bytes": 39410,
+      "sha256": "5f6217786c2f1553112610afb7a545063ceb6490e8b2d242e8eb4a6256dbec15"
+    },
+    {
+      "path": "skills/manage-769robotics-deals/SKILL.md",
+      "bytes": 16010,
+      "sha256": "d305592b5c92cdfd4e27a11c4eff754240bba3a262bf948e848edd77ec9cbdaa"
+    },
+    {
+      "path": "skills/orchestrate-769robotics/SKILL.md",
+      "bytes": 3881,
+      "sha256": "06575f5db2a6b47a6e25c3cafb92affbb7864299f81a47ff29a729e63325c293"
+    }
+  ],
+  "external_reference_inventory": [
+    {
+      "name": "README-BBNTTL.md",
+      "source_package_presence": "missing",
+      "drive_binding": "guide located and read; binding pending policy reconciliation",
+      "required_for": "acceptance/liquidation minutes"
+    },
+    {
+      "name": "tracker-schema.md",
+      "source_package_presence": "present and inspected",
+      "drive_binding": "unverified",
+      "required_for": "rental deal field semantics"
+    },
+    {
+      "name": "contract-discovery.md",
+      "source_package_presence": "present and inspected",
+      "drive_binding": "unverified",
+      "required_for": "bounded rental discovery"
+    }
+  ],
+  "optional_source_files_omitted": [
+    "agents/openai.yaml",
+    "assets/icon.svg"
+  ],
+  "external_skill_dependencies": [
+    "schedule-769robotics-events"
+  ],
+  "excluded": [
+    "reference contents",
+    "seller/customer record values",
+    "customer-specific payment exceptions",
+    "templates",
+    "current product/price values",
+    "tracker state",
+    "payment evidence",
+    "audit logs",
+    "credentials"
+  ],
+  "performed": {
+    "github_write": true,
+    "drive_write": false,
+    "installed_skill_update": false,
+    "activation": false,
+    "reminder_change": false,
+    "bounded_drive_reference_read": true
+  },
+  "readiness_document": "MIGRATION.md",
+  "external_runtime_dependencies": [
+    "Google Drive / Docs / Sheets connectors and relevant authoring guidance",
+    "Existing approved rental reminder",
+    "GPT Workspace add-on for source-selection mode only"
+  ],
+  "publication_authorized_on": "2026-10-06",
+  "source_rechecked_on": "2026-10-06",
+  "source_recheck": "No substantive drift; read API omits one trailing blank line relative to archived source bytes."
+}
