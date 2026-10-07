@@ -1,37 +1,24 @@
-# 769 Robotics skill migration pilot
+# 769 Robotics shared business skills
 
-This is a reviewable, unactivated pilot package for the user-approved public GitHub repository.
+GitHub is the canonical instruction source. Google Drive holds templates, references, customer documents, prices, project state and private business-profile values.
 
-## Included
+## Workflows
 
-- Contract and quotation drafting workflow
-- Rental deal-management workflow
-- Quotation-rules dependency
-- A small business-workflow orchestrator
-- An empty profile binding contract and a migration manifest
+- [Contract and quotation drafting](skills/draft-769robotics-contract/SKILL.md)
+- [Quotation rules](skills/769robotics-quotation-rules/SKILL.md)
+- [Business orchestrator](skills/orchestrate-769robotics/SKILL.md)
+- [Deal-management pilot](skills/manage-769robotics-deals/SKILL.md), not activated by contract setup
 
-The three existing workflows are adapted from the current user-owned skills. Existing business rules are retained, with customer-specific facts removed from repository text and routed to Drive. The orchestrator is new routing glue.
+Contract rules are reconciled; each runtime must bind its own private Drive profile and pass the [mode-specific checks](MIGRATION.md). The [example profile](profiles/769robotics.example.json) is a schema, not working data.
 
-## Storage boundary
+## Onboard an agent using this repository
 
-GitHub holds workflow instructions and configuration structure. Google Drive remains the source for references, templates, current product/price facts, seller/customer records, customer-specific exceptions, project status, payments, and audit history.
+Give your agent this prompt together with this repository URL:
 
-The profile is deliberately empty. It describes the runtime bindings needed from a verified Drive business profile. No private customer document, tracker snapshot, price-sheet export, credential, or reference document is included.
+> Set up the 769 Robotics contract skill from this repository in my current agent environment. First read README.md, MIGRATION.md, the profile schema, and skills/draft-769robotics-contract/SKILL.md. Inspect the current supported skill-installation mechanism for this environment. Show the exact local/cloud destination and the files you propose to change; preserve existing customizations and obtain any required installation approval. Install a small GitHub-first routing entry, not a disconnected copy of the drafting rules. On every contract task, retrieve the approved GitHub version, check the current default-branch changes, and identify the revision used. Do not silently fall back to an older local copy if GitHub is unavailable. Do not run repository scripts without inspection and the necessary authorization. Connect my own authorized Google Drive account, then ask my administrator for the approved private business-profile link and only the specific template/customer-folder access needed for my role. Never put profile values, customer records, source references, prices, payments, credentials, or private notes in this repository. Check all required bindings and business-rule decisions for the requested mode. Run a read-only trial with synthetic inputs. Report installation, GitHub retrieval, Drive access and drafting readiness separately, including anything still blocked. Do not create a customer document, change sharing, send documents, or install unrelated skills during onboarding.
 
-## Status
+A repository link alone does not install a skill, grant Drive access, or override the agent platform's confirmation requirements. The agent must support repository reads and an installation mechanism. Chat-only environments may be able to retrieve instructions for the current task without persistent installation; report that accurately. Installing a routing entry does not automatically synchronize every device.
 
-Repository review pilot. Publication to `vuongminhkhanh29-code/skill` was authorized on 2026-10-06 with its Public visibility explicitly accepted. No installed skill has changed, and no runtime or reminder has been altered.
+Use each employee's own accounts. Department repositories and least-privilege Drive access can be added later; no department-level permissions are established by this README.
 
-This is not yet a complete runnable migration. Read [MIGRATION.md](MIGRATION.md) for missing references, unresolved source-rule conflicts, and readiness gates. The existing installed workflows remain in place.
-
-## Layout
-
-- `skills/draft-769robotics-contract/SKILL.md`
-- `skills/manage-769robotics-deals/SKILL.md`
-- `skills/769robotics-quotation-rules/SKILL.md`
-- `skills/orchestrate-769robotics/SKILL.md`
-- `profiles/769robotics.example.json`
-- `migration-manifest.json`
-
-Publishing these files does not automatically install or activate them. The pilot preserves business workflow content; it does not grant new permissions to an executor. Use only the user-authorized task and the relevant connected services’ current access.
-
+The owner's cloud entry and each employee/device are separate installations. Report current runtime verification honestly; a README alone is not proof of installation. Never publish private profile values or source IDs here.

@@ -5,7 +5,7 @@ description: Apply the user's standing price, payment, naming and folder rules w
 
 # 769 Robotics quotation rules
 
-Pilot candidate only. Do not activate or use for live writes until the readiness gates in `../../MIGRATION.md` pass. Customer-specific exceptions remain in Drive and must be resolved from the relevant verified customer record before use.
+Use the reconciled mode-specific readiness rules in `../../MIGRATION.md`. Customer-specific exceptions remain in Drive and must be resolved from the relevant verified customer record before use.
 
 Use these standing user preferences alongside the original contract workflow when available. This supplementary skill does not replace missing templates or invent previous workflow instructions.
 
@@ -23,15 +23,16 @@ Use these standing user preferences alongside the original contract workflow whe
 
 ## Names and location
 
-- Name the chat session exactly like the customer/event folder. Use the established folder pattern: CUSTOMER - MODELS AND QUANTITIES - EVENT DATE - PURPOSE. Preserve unconfirmed date precision, for example 11-12.2026; do not invent a day.
+- Preserve established destination roots, matching existing customer/event folders and document naming. For new folders use a concise recognizable customer, models and dates; add quantities/purpose/place only when needed for retrieval. Do not globally migrate folders. Name the chat session like the selected folder when supported. Preserve unconfirmed date precision; do not invent a day.
 - Use an exposed session-title tool when available. If no such capability exists, disclose that the title was not changed and provide the exact desired title. Do not claim success.
 - Name each document using its document type plus the same customer/model/date/purpose tokens.
-- Keep pristine templates in the template folder. Place customer copies inside the corresponding customer folder and inherit its sharing; the user's standing preference is anyone with the link can view. Verify the resulting parent and permissions.
+- Keep templates unchanged. Place customer copies in the corresponding authorized folder; verify actual parent and permissions. Do not assume permissions copy or expand sharing without applicable user authorization. Keep new owner drafts private if no audience is authorized.
 
 ## Source and template fidelity
 
-- Verify customer details from the supplied source and current document contents. Use [CHƯA CUNG CẤP] or [CHƯA XÁC NHẬN] for missing information. Do not guess facts.
+- Verify customer details from the supplied source and current document contents. Use the exact [CHƯA CUNG CẤP] marker for missing information; qualify known but unconfirmed facts explicitly without asserting confirmation. Do not guess facts.
 - Read and copy the authoritative template, preserving native Google Docs structure, styles, tables and automatic numbering. Adapt all previous-customer facts before delivery.
 - Leave unconfirmed exact dates, duration, venue, contacts, final payment deadline, logistics scope and technical choreography visibly unconfirmed. Do not promise unsupported synchronized motions.
 - Verify content, arithmetic, sharing, and rendered page layout before handing over the document.
+
 

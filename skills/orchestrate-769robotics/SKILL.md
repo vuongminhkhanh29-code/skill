@@ -5,21 +5,23 @@ description: Route a 769 Robotics request among rental deal status, quotation an
 
 # 769 Robotics business orchestrator
 
-Pilot candidate only. Do not activate or use for live writes until the readiness gates in `../../MIGRATION.md` pass.
+Apply the mode-specific readiness gates in `../../MIGRATION.md`. This routing file does not activate the GitHub deal-management pilot. For rental status grounding use the existing installed manage-769robotics-deals workflow until its separate migration is verified.
 
 ## Resolve the request
 
 1. Identify the requested outcome: status/payment update, document deliverable, Calendar draft/change, or a combination.
 2. Load the verified Drive business profile through the runtime binding described in `../../profiles/769robotics.example.json`. Resolve relevant source IDs and reference documents there. Leave customer data, templates, product/price data, tracker rows, payment evidence, and audit history in Drive.
 3. Use the current user request and verified sources to resolve customer, deal, date, and document identity. Ask one focused question if a consequential ambiguity remains.
-4. Check `../../MIGRATION.md` for an unresolved rule conflict that affects the request. Do not silently decide a new rule as part of this pilot.
+4. Apply the reconciled precedence in `../../MIGRATION.md`; stop only for material unresolved task-specific conflicts.
 
 ## Route by outcome
 
-- First ground live rental status through `../manage-769robotics-deals/SKILL.md` for in-scope rental deal requests, including new/revised customer rental contracts and event/rehearsal planning. This preserves deal management’s first-routing rule. It does not enroll a quotation or sync unverified facts from a customer document still being drafted; apply the verified post-document handoff below before syncing those new facts.
-- Rental status, preparation, signing, deposits, balances, completion, or reminder decisions: use `../manage-769robotics-deals/SKILL.md` first. Read the live tracker and required Drive references before interpreting or changing operational state.
+- First ground live rental status through the existing installed `manage-769robotics-deals` workflow for in-scope rental deal requests, including new/revised customer rental contracts and event/rehearsal planning. This preserves deal management’s first-routing rule. It does not enroll a quotation or sync unverified facts from a customer document still being drafted; apply the verified post-document handoff below before syncing those new facts.
+- Rental status, preparation, signing, deposits, balances, completion, or reminder decisions: use the existing installed `manage-769robotics-deals` workflow first. Read the live tracker and required Drive references before interpreting or changing operational state.
 - Quotation, rental/purchase contract, acceptance/liquidation minutes, or customer document organization: use `../draft-769robotics-contract/SKILL.md`. Apply `../769robotics-quotation-rules/SKILL.md` where relevant. Read the exact source templates and current price sources; create or edit only the authorized customer deliverable.
 - Event/rehearsal schedule or team Calendar request: use the separately installed `schedule-769robotics-events` workflow. It is an external dependency, not included in this pilot. If it is unavailable, report that blocker; do not invent a replacement scheduling policy.
+
+For an employee with draft-only access, a missing status/scheduler skill blocks only its operational reads/writes or handoff. Independently verified document drafting may proceed with explicit disclosure of unavailable handoffs; never simulate tracker state or schedules.
 
 ## Preserve handoff boundaries
 
@@ -32,3 +34,4 @@ Pilot candidate only. Do not activate or use for live writes until the readiness
 ## Report the result
 
 Report each requested outcome separately: completed and verified, already recorded/no change, partially complete, or blocked with the smallest missing input. Link only verified customer-facing sources. Do not report an unperformed handoff or unresolved dependency as complete.
+

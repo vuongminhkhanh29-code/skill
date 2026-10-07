@@ -1,77 +1,38 @@
-# Migration review and readiness
+# Contract workflow activation and remaining boundaries
 
-## Scope of this pilot
+Contract drafting rules reconciled 2026-10-07 under the owner's explicit setup authorization. GitHub stores instructions only. Private Drive profiles, source documents and customer state never belong in this repository.
 
-Two core business workflows, one required quotation-rules dependency, and one new routing-only orchestrator. No installed workflow is revised in this preparation step.
+## Reconciled precedence
 
-The source main files were read fresh on 2026-10-04 and rechecked on 2026-10-06; no substantive source drift was found (only a trailing blank-line difference in the read API). Published source versions were contract v23, deal management v4, and quotation rules v4. The source package inventory was inspected, including the deal-management reference text. A bounded Drive search also located and read the acceptance/liquidation README in the approved template library. The full source binding set and live tracker were not verified, and no customer workflow was executed.
+1. Preserve existing destination roots, customer/event folders and file naming. Reuse the same verified deal folder. For new folders choose concise customer/models/dates, adding quantities, place or purpose only when useful. No global folder migration.
+2. User prices are before VAT unless explicitly stated otherwise. Verify the transaction's applicable VAT from authoritative current sources. A contract draft does not issue an invoice. Accurately document goods/services and all consideration; do not hide business receipts or fabricate invoices.
+3. Explicit current-customer payment terms override defaults. Exact VND60m before VAT uses 50/30/20. Otherwise current rental README default is 50/50 for <=VND100m and one event, 50/30/20 for >VND100m or multiple events. Preserve the live guide's stated amount basis; ask only if material ambiguity remains. Default cutoff is before17:00 Vietnam, not16:59. Do not generalize a customer exception.
+4. Preserve permissions and verify them. A new owner draft can remain private. Public/customer sharing needs applicable authorization; no template or folder permission changes as a workaround.
+5. Missing input uses exactly [CHƯA CUNG CẤP]. Known but unconfirmed facts require explicit qualification, never presumed confirmation.
+6. Acceptance/liquidation records assert only verified outcomes. No-issues/full-acceptance defaults in a reference are not evidence. Use placeholders when results are unavailable.
+7. Omit the complete additional-programming article unless specified; renumber articles and cross-references. Do not retain an empty title.
+8. Where the rental guide's overtime rounding conflicts with the designated Master, preserve the Master's actual-time/no-rounding default; explicit customer terms override it. Do not add rounded charges from the guide alone.
 
-## Intentional migration adaptations
+## Required private bindings by mode
 
-- Replace seller identity, Drive file IDs, tracker ID, working-customer document identity, and reminder identity with runtime bindings
-- Keep all referenced document contents and current state out of GitHub
-- Replace named-customer examples with anonymous examples
-- Move the named-customer payment exception’s dependency to the current Drive customer record; do not turn it into a universal payment rule
-- Preserve the representative-title correction, numerical commercial rules, date rules, safety checks, and workflow handoffs
-- Preserve the existing quotation-template selection even where the two designated template filenames say they are old; a filename alone must not select a replacement
-- Omit optional source UI metadata and icons from the pilot; no runtime installation or UI-fidelity claim is made
-- Add explicit unactivated-pilot gates and dependency disclosures
-- Convert the source's historical quotation-Sheet validity assertion into an expected type requiring live verification; retain the native-Doc customer deliverable rule
+Every task fetches the approved GitHub revision afresh and checks source identity, access and content in Drive. The example profile contains nulls by design and is never live configuration.
 
-The profile carries no live values. The actual Drive business-profile document, current identifiers, primary working-document designation, and customer-specific exception record still need verified bindings. Removing those facts from repository text does not remove their functional requirement.
+- All document modes: private profile, verified seller legal identity and representative, authorized target root/folder, supplied or verified customer scope, relevant native template
+- Rental contract: rental README, rental Master, both current price Sheets for applicable product checks
+- Detailed rental/sales quotation: designated quotation Doc and both current price Sheets
+- Purchase contract: designated purchase template and current product/price Sheets
+- Acceptance/liquidation: acceptance master, acceptance guide, actual contract and verified outcomes
+- Customer registry and exception registry are optional for directly identified customer documents; resolve explicit task/customer evidence rather than fabricate a registry. Missing registry blocks only operations that depend on it
+- Deal-management writes/discovery: separately require tracker-schema and contract-discovery references and approved live tracker. This migration does not activate the GitHub deal-management pilot; the existing installed workflow remains responsible for its authorized actions
+- Calendar: separately installed scheduler and explicit plan approval; no Calendar write follows from drafting
+- GPT Workspace selection: optional mode requiring its own tool/UI access; absence does not block ordinary drafting
 
-## Actual dependency inventory
+## Readiness protocol
 
-### Drafting
+An owner runtime may be marked ready for drafting after private binding readback, source-content reads, permission verification and a synthetic read-only trial. Each requested real document still requires specific customer/scope inputs, current source reads, native copy, targeted edits, arithmetic and placeholder audits, full readback and rendered PDF QA. Ready does not mean any contract is already written, signed, shared or sent.
 
-- Current Google Drive / Docs / Sheets tooling and relevant authoring guidance: external runtime dependencies
-- Rental README, protected templates, current quotation price Sheets, acceptance master, seller profile, and customer records: remain in Drive
-- `references/README-BBNTTL.md`: absent from the published source package. A Drive acceptance/liquidation README was located in the approved template library and read; it points to the same acceptance master. Bind this verified candidate only after resolving the acceptance-default conflict below; do not silently treat the broken local reference as complete
-- `manage-769robotics-deals` and `769robotics-quotation-rules`: included
-- `schedule-769robotics-events`: external installed dependency, not migrated in this pilot
-- GPT Workspace add-on/UI access: external dependency for the retained workspace-source-selection mode only, not ordinary drafting. The pilot neither installs it nor verifies its current capabilities; check it before that mode and stop that mode if unavailable, while reporting the access/selection limitation
+Employee onboarding must check their own account, supported installation mechanism and private Drive grants. Repository visibility does not grant Drive access. Do not claim cross-device installation or automatic synchronization from publishing this repository.
 
-### Deal management
+## Migration history
 
-- `references/tracker-schema.md` and `references/contract-discovery.md`: present and inspected in the source package; not copied to GitHub. Approved Drive locations are not yet bound
-- Live tracker, actual customer contracts, customer folders, update history, and existing rental reminder: external live dependencies
-- The reference documents contain operational instructions as well as data examples. They cannot be silently omitted. The dependent mode must stop until the approved Drive reference can be read
-
-### Quotation rules
-
-- No bundled reference documents in the source package
-- Requires current authoritative VAT information, protected templates, current product/price sources, and relevant customer-specific instructions in Drive
-
-## Existing source-rule conflicts, preserved for review
-
-These were already present across the source workflows. This migration does not choose a new business policy or alter the installed versions.
-
-1. Folder and document naming: the contract workflow prefers customer short name + product models + compact deal dates, while the quotation supplement requires customer + models and quantities + event date + purpose
-2. VAT: the contract workflow defaults VAT to 8% unless overridden, while the quotation supplement requires the applicable rate to be verified from current authoritative sources
-3. Rental payments: the contract workflow preserves the rental Master’s two-installment structure, while the quotation supplement has an exact 60,000,000 VND before-VAT default of three installments. Customer-specific instructions override defaults, but overlapping default scope needs an explicit resolution
-4. Sharing: the contract workflow sets public-link viewer on the duplicate itself and warns against relying on copied permissions; the quotation supplement speaks of inheriting customer-folder sharing. Do not widen folder access or claim inheritance is equivalent without review
-5. Missing-field presentation: the contract workflow requires the exact unresolved marker `[CHƯA CUNG CẤP]`; the quotation supplement also permits `[CHƯA XÁC NHẬN]`. Retain source text pending a deliberate policy decision
-6. Acceptance outcome: the Drive acceptance/liquidation README defaults to full acceptance, no issues, and unchanged settlement when no exception is supplied. The contract skill requires verified acceptance outcomes and mutually confirmed accepted lines. Do not choose between those policies in a migration or infer actual completion, signature, or payment from document existence
-
-The source contract’s 16:59 default payment due time and its current folder rules remain unchanged in the candidate. Any separately discussed but deferred business-rule changes are outside this migration.
-
-## Readiness gates
-
-Before publishing:
-- Confirm the exact repository, owner, and authorized visibility. The user explicitly approved Public publication to `vuongminhkhanh29-code/skill` on 2026-10-06.
-- Confirm the connected identity has the needed repository access
-- Review the sanitized file list and actual diff
-- Keep all source/reference/customer artifacts out of the commit
-
-Before activation or live writes:
-- Resolve the affected rule conflicts explicitly without silently editing business semantics
-- Bind and verify the Drive business profile, source IDs, reference documents, customer exceptions, and external scheduler dependency
-- Resolve the acceptance-default conflict and bind the located Drive guide, or keep that mode disabled pending resolution
-- Verify source identities, types, permissions, and required read access
-- Run a non-mutating workflow trial with synthetic inputs and current read-only sources
-- Obtain explicit activation/install scope; no automatic installation is implied
-- Confirm the existing workflow remains available for rollback and do not duplicate reminders
-
-## Verification limit
-
-Local structural and sanitization checks do not establish runtime readiness. This repository publication is a review pilot only. Drive binding verification, installation, live workflow execution, and production status changes have not been performed.
+Initial sanitized publication was 2026-10-06. This activation revision resolves the listed drafting conflicts and supplies link-based onboarding instructions. Historical source version/hashes remain in the manifest for provenance. Source reference contents stay in Drive. Deal-management reference binding and broader employee/department rollout remain separate.

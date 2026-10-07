@@ -73,7 +73,7 @@
     "acceptance_minutes_guide": {
       "file_id": null,
       "url": null,
-      "status": "drive-guide-located-and-read-pending-policy-reconciliation"
+      "status": "requires-private-binding-verified-outcomes-only"
     },
     "tracker_schema": {
       "file_id": null,

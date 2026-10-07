@@ -1,7 +1,6 @@
 {
   "format_version": 1,
   "prepared_on": "2026-10-04",
-  "status": "repository-review-pilot",
   "github_repository": "https://github.com/vuongminhkhanh29-code/skill",
   "visibility_required": "public-explicitly-authorized",
   "source_skills": [
@@ -31,48 +30,6 @@
     }
   ],
   "new_workflow": "orchestrate-769robotics",
-  "file_inventory": [
-    {
-      "path": ".gitignore",
-      "bytes": 174,
-      "sha256": "a6264c1200eb24183908aaf7c9d28527e188bce702533c9f77a280f742c1d8ba"
-    },
-    {
-      "path": "MIGRATION.md",
-      "bytes": 7459,
-      "sha256": "91420f2290f10bc93fe90941ca7a9bb98dd2425812b508806fcba062a0652404"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2064,
-      "sha256": "6cb6a49d5e346bfca2dcba2800f7627836fcc98aaf02396f9d577170f9dd6ba4"
-    },
-    {
-      "path": "profiles/769robotics.example.json",
-      "bytes": 3279,
-      "sha256": "12dbe4f9e07d576aa0b7bc9811ffb2ca03dc778a4de5cadd3f52f72b4858ce8f"
-    },
-    {
-      "path": "skills/769robotics-quotation-rules/SKILL.md",
-      "bytes": 3838,
-      "sha256": "093f5278b8a2de119f91731b44dc13ac54220fb18d760ef07ad9b64aab37110a"
-    },
-    {
-      "path": "skills/draft-769robotics-contract/SKILL.md",
-      "bytes": 39410,
-      "sha256": "5f6217786c2f1553112610afb7a545063ceb6490e8b2d242e8eb4a6256dbec15"
-    },
-    {
-      "path": "skills/manage-769robotics-deals/SKILL.md",
-      "bytes": 16010,
-      "sha256": "d305592b5c92cdfd4e27a11c4eff754240bba3a262bf948e848edd77ec9cbdaa"
-    },
-    {
-      "path": "skills/orchestrate-769robotics/SKILL.md",
-      "bytes": 3881,
-      "sha256": "06575f5db2a6b47a6e25c3cafb92affbb7864299f81a47ff29a729e63325c293"
-    }
-  ],
   "external_reference_inventory": [
     {
       "name": "README-BBNTTL.md",
@@ -111,14 +68,6 @@
     "audit logs",
     "credentials"
   ],
-  "performed": {
-    "github_write": true,
-    "drive_write": false,
-    "installed_skill_update": false,
-    "activation": false,
-    "reminder_change": false,
-    "bounded_drive_reference_read": true
-  },
   "readiness_document": "MIGRATION.md",
   "external_runtime_dependencies": [
     "Google Drive / Docs / Sheets connectors and relevant authoring guidance",
@@ -127,5 +76,93 @@
   ],
   "publication_authorized_on": "2026-10-06",
   "source_rechecked_on": "2026-10-06",
-  "source_recheck": "No substantive drift; read API omits one trailing blank line relative to archived source bytes."
+  "source_recheck": "No substantive drift; read API omits one trailing blank line relative to archived source bytes.",
+  "historical_publication_snapshot": {
+    "status": "repository-review-pilot",
+    "file_inventory": [
+      {
+        "path": ".gitignore",
+        "bytes": 174,
+        "sha256": "a6264c1200eb24183908aaf7c9d28527e188bce702533c9f77a280f742c1d8ba"
+      },
+      {
+        "path": "MIGRATION.md",
+        "bytes": 7459,
+        "sha256": "91420f2290f10bc93fe90941ca7a9bb98dd2425812b508806fcba062a0652404"
+      },
+      {
+        "path": "README.md",
+        "bytes": 2064,
+        "sha256": "6cb6a49d5e346bfca2dcba2800f7627836fcc98aaf02396f9d577170f9dd6ba4"
+      },
+      {
+        "path": "profiles/769robotics.example.json",
+        "bytes": 3279,
+        "sha256": "12dbe4f9e07d576aa0b7bc9811ffb2ca03dc778a4de5cadd3f52f72b4858ce8f"
+      },
+      {
+        "path": "skills/769robotics-quotation-rules/SKILL.md",
+        "bytes": 3838,
+        "sha256": "093f5278b8a2de119f91731b44dc13ac54220fb18d760ef07ad9b64aab37110a"
+      },
+      {
+        "path": "skills/draft-769robotics-contract/SKILL.md",
+        "bytes": 39410,
+        "sha256": "5f6217786c2f1553112610afb7a545063ceb6490e8b2d242e8eb4a6256dbec15"
+      },
+      {
+        "path": "skills/manage-769robotics-deals/SKILL.md",
+        "bytes": 16010,
+        "sha256": "d305592b5c92cdfd4e27a11c4eff754240bba3a262bf948e848edd77ec9cbdaa"
+      },
+      {
+        "path": "skills/orchestrate-769robotics/SKILL.md",
+        "bytes": 3881,
+        "sha256": "06575f5db2a6b47a6e25c3cafb92affbb7864299f81a47ff29a729e63325c293"
+      }
+    ],
+    "performed": {
+      "github_write": true,
+      "drive_write": false,
+      "installed_skill_update": false,
+      "activation": false,
+      "reminder_change": false,
+      "bounded_drive_reference_read": true
+    }
+  },
+  "status": "contract-workflow-reconciled-runtime-binding-required",
+  "activation_revision_date": "2026-10-07",
+  "activation_scope": "Contract drafting and quotation dependency only; owner runtime verified separately; deal-management pilot not activated",
+  "file_inventory": [
+    {
+      "path": "MIGRATION.md",
+      "bytes": 4763,
+      "sha256": "b5e655d03e804ae2d8e55cebcfde1436f81c39cd9be5fddd3fdb90a0a75ef321"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3188,
+      "sha256": "827ff34ac8e6281f961c97c7bb2b3233be4c8c13127a3535f48ee672f19440bf"
+    },
+    {
+      "path": "profiles/769robotics.example.json",
+      "bytes": 3268,
+      "sha256": "9c830226994e8c4a2874a499b56c11df2a22874a85bfccb97e08d941a666e8fc"
+    },
+    {
+      "path": "skills/769robotics-quotation-rules/SKILL.md",
+      "bytes": 4048,
+      "sha256": "aa65abce12ea9bfde27fc7fee9cba306aec273b92ee575d6ba014a0c864ced99"
+    },
+    {
+      "path": "skills/draft-769robotics-contract/SKILL.md",
+      "bytes": 40719,
+      "sha256": "6ad84547a92b309d9c8699b24ca226200f74980cebb18bc8d2e52f64551025a5"
+    },
+    {
+      "path": "skills/orchestrate-769robotics/SKILL.md",
+      "bytes": 4318,
+      "sha256": "8267821adab4bedeb5996813442479570a55fb739a68ae711f377a806f986f8b"
+    }
+  ]
 }

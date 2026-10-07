@@ -5,7 +5,7 @@ description: Safely draft and revise 769Robotics detailed rental or sales quotat
 
 # Draft 769Robotics Contract
 
-Pilot candidate only. Do not activate or use for live writes until the readiness gates in `../../MIGRATION.md` pass. Load `../../profiles/769robotics.example.json` as the binding contract, not as live source data.
+GitHub is the canonical workflow source. Load `../../profiles/769robotics.example.json` as the binding contract, not as live source data. Apply the reconciled rules in `../../MIGRATION.md` and verify the private Drive profile and mode-specific sources before each task. A successfully configured owner runtime does not grant access to another user or device.
 
 Protect the source library while creating customer-specific contracts and selecting supported workspace sources.
 
@@ -26,7 +26,7 @@ Resolve each source from the verified Drive business profile described in `../..
 - `drive.acceptance_template`: native acceptance/liquidation master, retained inside the rental-template library and duplicated only
 - `references.acceptance_minutes_guide`: required acceptance/liquidation reference; read it before this mode
 
-Reference contents and customer records live in Drive. This repository does not supply missing references. See `../../MIGRATION.md` for unresolved bindings and source conflicts.
+Reference contents and customer records live in Drive. This repository does not supply missing references. See `../../MIGRATION.md` for binding requirements and reconciled precedence. A missing optional registry does not block drafting when the exact current customer document/folder is supplied and verified; it does block any dependent discovery or status write.
 
 ## Customer subfolder organization
 
@@ -115,7 +115,7 @@ Resolve an existing customer working document from the exact user-provided link 
 5. Find or create the recognizable customer/deal subfolder inside `Bảng báo giá cho Khách hàng` using the customer-short + products + compact-dates rule, then move the duplicate into it. Add the verified destination parent and remove only the duplicate's verified previous parent. Preserve unrelated parents.
 6. Verify the duplicate is a native Google Doc inside the intended recognizable customer/deal subfolder before editing its content.
 7. Edit only the duplicate. Preserve its tables, paragraphs, images, headers, footers, formatting, and print layout unless the user's requested content requires a scoped change.
-8. Set the duplicate's link access to `Anyone with the link` and role to `Viewer`.
+8. Verify duplicate sharing against the explicitly authorized audience; keep private when no audience is authorized.
 9. Read back the complete document, Drive metadata, file type, destination parent, and sharing state before reporting completion.
 
 ## Contract drafting workflow
@@ -126,8 +126,8 @@ Resolve an existing customer working document from the exact user-provided link 
 4. Find or create the recognizable customer/deal subfolder inside `Hợp đồng cho Khách hàng` using the customer-short + products + compact-dates rule, then move the duplicate into it. Add the verified destination parent and remove only the duplicate's verified previous parent. Preserve unrelated parents.
 5. Verify that the duplicate is a native Google Doc inside the intended recognizable customer/deal subfolder before editing contract content.
 6. Edit only the duplicate. Preserve the source template and every other item in the main folder.
-7. Set the duplicate's link access to `Anyone with the link` and role to `Viewer`. Apply this permission to the duplicate itself; do not rely on template permissions being copied.
-8. Verify the duplicate's effective link access is public-link viewer. Domain-only access such as `Anyone at company` is not equivalent and must not be reported as public-link access.
+7. Verify the duplicate's permissions against the task-authorized audience. Keep private by default during drafting; apply sharing only within explicit current or standing authorization. Do not rely on template permissions being copied.
+8. Verify the duplicate's actual permissions match the authorized audience and role. Report private-only access honestly; do not widen sharing merely to pass a check.
 9. Run the mandatory placeholder audit below and resolve every field supported by the available facts.
 10. Run the mandatory final error scan below, repair every deterministic in-scope error, and scan the settled document again.
 11. Read back the duplicate, its Drive metadata, and its sharing state. Report the verified document URL, destination folder, link-access status, every repaired error, every unresolved risk or missing item, and whether the final scan passed.
@@ -139,7 +139,7 @@ Resolve an existing customer working document from the exact user-provided link 
 3. Duplicate the master as a native Google Doc. Keep the master and its reusable Word copy unchanged while preparing customer-specific minutes.
 4. Fill the minutes date with `now()` using the user's local timezone, then write that date as literal plain text in the customer copy. Do not leave the `now()` token or a date/time chip in the customer copy.
 5. Use native Google Docs numbered lists for numbered clauses under each article. Do not type numeric prefixes into clause paragraph text. Restart each article's list at 1 and verify list indentation/hanging alignment after edits. Article headings and price-table STT cells remain headings/table values, not clause lists.
-6. Do not include a personal-deposit section or deposit discussion in this template. Reconcile company payments only.
+6. Reconcile all genuine consideration and business receipts regardless of destination account. A genuinely refundable personal security deposit can remain in a separate accurate deposit/refund record, but never exclude business revenue merely because it was received personally. Do not conceal an amount due or paid.
 7. Preserve the full contract price table. Mark each line accepted or excluded; calculate the final settlement only from mutually confirmed accepted lines. If the settlement changes the signed contract value, state that both parties agree to the adjustment and show the excluded amount and tax effect.
 8. Keep the complete signature area indivisible on one page. If the space is insufficient, move the whole signature block to the next page. After every adjustment export to PDF, inspect every affected page, and verify the signature block and native list layout.
 9. Audit the complete customer copy for placeholders, arithmetic, words for amounts, cross-references, party identities, dates, and internal consistency. Do not leave unsupported blanks or stale sample facts.
@@ -152,12 +152,16 @@ Resolve an existing customer working document from the exact user-provided link 
 - Present the calendar draft and the three default internal recipients for user approval. Contract creation or revision alone authorizes preparing the calendar draft, not writing Calendar entries or sending invitations. Once that exact draft is approved, continue without requesting the same permission again.
 - After changes to verified contract event/rehearsal dates, times, location, models, or purpose, invoke the scheduler to propose reconciliation of existing entries instead of duplicating them. Report the contract outcome and calendar outcome separately.
 
+## Optional operational dependencies
+
+For an employee with draft-only access, unavailable status/scheduler skills block only those handoffs, not independently source-verified document drafting. Report skipped/unavailable handoffs explicitly. Existing owner status workflows retain their first-read and audit rules where available.
+
 ## Post-document handoff
 
 - Keep drafting as this skill’s primary task. Do not perform an operational database write until the customer duplicate passes Drive readback, sharing verification, the placeholder audit, and the final error scan.
 - After verification, prepare a structured handoff containing the customer identity, transaction type, product, quantity, verified values, dates, document metadata, contract number, payment terms, and unresolved operational facts.
 - For a rental, include the Master ID, verified customer values, event scope, commercial values, dates, payment schedule, and unresolved customer-facing facts. Do not include or request robot-source facts.
-- Then use the separate `manage-769robotics-deals` skill to synchronize the deal and generate the payment schedule.
+- Then use the existing installed `manage-769robotics-deals` skill (not the unactivated GitHub pilot) to synchronize the deal and generate the payment schedule.
 - Treat the document result and dashboard synchronization as separately verifiable outcomes. A successful document followed by a synchronization failure is partial completion and must be reported without changing the document result.
 - A created contract is a draft or document record only. Never infer signing, payment, handover, acceptance, completion, cancellation, or loss from file existence.
 
@@ -213,13 +217,10 @@ Use direct edits only on an existing customer document that the user explicitly 
 
 ## Duplicate sharing
 
-- Default every newly drafted customer contract or quotation duplicate to `Anyone with the link - Viewer`.
-- Use a Drive sharing action that creates an `anyone` + `reader` permission. If the connector cannot create public-link permissions but an authenticated Google Drive sharing dialog is available, use it to select `Anyone with the link` and `Viewer`, then verify the result.
-- Never substitute domain-wide sharing for public-link sharing.
-- Never grant editor or commenter access unless the user explicitly requests it.
-- Do not make the source template public as a workaround. File-level permissions on a source are not a reliable inheritance mechanism for copies.
-- Do not make the customer-contract destination folder public; that could expose unrelated customer documents.
-- If public-link viewer access cannot be verified, keep the draft private, report the limitation, and do not claim that sharing succeeded.
+- Preserve existing file/folder permissions and organization. Never expand the audience merely because a template or historical file is public.
+- Keep a new draft private unless current or explicit standing user authorization covers its audience and access level. A specific authorized customer-folder placement may inherit access; inspect actual resulting permissions.
+- Public-link viewer sharing requires applicable authorization for that deliverable; verify it independently. Never substitute domain-wide sharing or grant editor/commenter access without authorization.
+- Never change source-template or destination-folder sharing as a workaround. If a requested sharing action is unavailable, keep the draft private and disclose the exact limitation; drafting can still finish for the owner.
 
 ## Contract defaults
 
@@ -239,7 +240,7 @@ Use direct edits only on an existing customer document that the user explicitly 
 - In reusable detailed rental and sales quotation templates, preselect `Cấu hình` and leave `Không` and `Lập trình` unchecked so new customer quotations inherit the default.
 - In a completed customer document, show only the selected choice and its short matching description. Do not display the unselected choices or descriptions for other levels.
 - Default `Nội dung hiển thị và kịch bản chi tiết` to `Theo thỏa thuận` unless the user provides specific content.
-- Keep the Article 3 title, but leave its body completely blank when the scope is not mentioned or when `Không` or `Cấu hình` is selected. Do not write `KHÔNG ÁP DỤNG`, a description, or a placeholder in the blank Article 3 body, and do not treat this intentional blank as an error during placeholder or final scans. Populate Article 3 only when `Lập trình` is selected or the user explicitly requests additional programming content for that article.
+- Include the additional-programming article only when the user explicitly specifies additional programming. Otherwise omit the complete article, including its title, and renumber subsequent articles and every cross-reference. `Không` or `Cấu hình` alone does not request programming.
 - Format every contract number as `DDMMYY-769Robotics-CUSTOMERSHORT`, where `DDMMYY` is the contract-signing date and `CUSTOMERSHORT` is a short unique customer identifier such as a customer’s established uppercase abbreviation.
 - Keep `CUSTOMERSHORT` concise, recognizable, and unique within the customer-contract folder. Prefer the customer's established abbreviation; otherwise derive a short uppercase identifier from the customer name.
 - Unless the user states different purchase-contract terms, use three payment installments based on the VAT-inclusive contract total:
@@ -253,10 +254,10 @@ Use direct edits only on an existing customer document that the user explicitly 
 - For rental contracts, use the exact duration and unit basis confirmed by the current customer scope. If the scope does not state a duration, use the duration shown for the exact product in the current rental price source; if it is still unavailable, keep `[CHƯA CUNG CẤP]` instead of asking about robot ownership or supplier.
 - Calculate the robot collection time as the stated start time plus the rental duration. Keep the same event date unless the calculation crosses midnight.
 - Treat early arrival for rental setup, checks, and trial runs as optional, never a default commitment. Use: `Bên A có thể đến sớm để setup, kiểm tra và chạy thử tùy điều kiện thực tế; việc đến sớm không phải là cam kết có mặt trước giờ vận hành hoặc vào một giờ cụ thể, trừ khi hai bên có thỏa thuận riêng bằng văn bản. Bên A vẫn phải bảo đảm thời gian vận hành đã thỏa thuận.` Never calculate arrival by subtracting one/two hours from an event or rehearsal start, or convert `có thể đến sớm` into `phải đến`, `sẽ đến`, or `có mặt lúc`. Include a specific arrival commitment only when the user explicitly confirms it for that booking. A separately scheduled rehearsal does not itself authorise an early-arrival promise. Preparation does not reduce agreed operating time. Before handoff, check every article, schedule table, and appendix for unsupported arrival/setup times and reconcile them with this rule.
-- For rental payment terms, preserve the settled two-installment structure in the single rental Master. Unless the user states different deadlines, set installment 1 to the user's current local calendar date plus 01 calendar day, which is also the default signing date, and set installment 2 to the event date plus 03 calendar days. Count every calendar day consecutively; never skip or adjust for Saturdays, Sundays, or public holidays. Do not calculate installment 1 as signing date plus another day.
-- Every payment due time in a rental contract must be before 17:00. If the customer has not specified a different time, use 16:59; never write 17:00 or later as a payment deadline. Keep any user-confirmed earlier time.
+- Rental installment precedence: explicit current-customer terms first; otherwise an exact 60,000,000 VND before-VAT total uses 50%/30%/20%; otherwise the current rental README default is 50%/50% for totals <=100,000,000 VND and one event, and 50%/30%/20% for totals >100,000,000 VND or multiple events. Do not broaden the exact-60m exception into a threshold. Read the current README for amount basis and milestone wording; preserve a genuinely missing milestone as [CHƯA CUNG CẤP]. For the two-installment default, installment 1 is local today +1 calendar day (the default signing date); final installment is event date +3 calendar days. Do not add another day or skip weekends/holidays. Explicit customer dates override these defaults.
+- Default payment cutoff wording is `trước 17:00` in Vietnam local time, not 16:59. Preserve explicit customer-specific times.
 - Include the confidentiality clause: “Hai bên bảo mật thông tin kỹ thuật, tài chính và tài liệu không công khai.” For advertising/portfolio use of event photos or video, state “Quyền Bên A sử dụng hình ảnh/video sự kiện cho quảng cáo/portfolio: Hai bên thỏa thuận sau.” when the parties have agreed to settle permission later; do not leave `[CHƯA CUNG CẤP]` for that decision.
-- Default VAT to 8% unless the user states a different rate or explicitly says VAT is excluded.
+- Treat user-supplied prices as before VAT unless explicitly stated otherwise. Verify applicable VAT from current authoritative sources for the transaction; a template rate is not a permanent tax rule. Drafting a contract does not itself issue a VAT invoice. Never knowingly understate consideration, omit supplied goods or services to conceal payment, fabricate invoices, or hide business receipts. Record personal payments accurately and distinguish refundable personal deposits from separate consideration.
 - Calculate and fill the pre-VAT total, VAT amount, and VAT-inclusive total.
 - When a quotation includes both an original price and a lower discounted or promotional price, show both prices in the same unit-price cell: put the original price on the first line with strikethrough, then put the discounted price directly below it in bold without strikethrough.
 - Use only the discounted price to calculate line totals, pre-VAT totals, VAT, and the VAT-inclusive total. Do not apply this two-line treatment when no discount is confirmed by the user or an authoritative current price source.
@@ -269,7 +270,7 @@ Use direct edits only on an existing customer document that the user explicitly 
 ## Non-negotiable write safety
 
 - Never edit, rename, move, delete, replace, or change sharing on the main folder, either destination folder, any canonical template, or any other source item unless the user explicitly instructs that exact change.
-- Public-link sharing is authorized only for the newly created duplicate under this workflow, not for the template, folders, or existing customer files.
+- Migration or installation grants no sharing authority. Any existing explicit sharing authorization is limited to its stated deliverable/audience; never extend it to templates, folders, or other customer files.
 - Treat requests such as “draft a detailed quotation,” “prepare a contract,” or “make a customer contract” as authorization to create and edit a duplicate only.
 - Do not interpret requested changes to the draft as permission to update the template.
 - If duplication or moving fails, stop before editing. Do not fall back to editing the source.
@@ -295,3 +296,4 @@ Known invalid inputs for this workflow:
 - Google Drive shortcuts when the add-on cannot resolve the target
 
 Expect the rental quotation price source to be a native Google Sheet rather than a shortcut. Confirm the bound file's live MIME type and source eligibility before selecting it. This source-type expectation does not change the rule that customer-facing detailed quotation deliverables are native Google Docs.
+
