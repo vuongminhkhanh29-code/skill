@@ -11,6 +11,8 @@ GitHub is the canonical instruction source. Google Drive holds templates, refere
 
 Contract rules are reconciled; each runtime must bind its own private Drive profile and pass the [mode-specific checks](MIGRATION.md). The [example profile](profiles/769robotics.example.json) is a schema, not working data.
 
+Customer document filenames and Drive titles must omit `DỰ THẢO` / `draft` labels, including during preparation. Use the canonical customer/model/date naming pattern in the contract skill. Keep draft and signing status in the operational records; naming does not prove approval, signing, payment, or completion.
+
 ## Onboard an agent using this repository
 
 Give your agent this prompt together with this repository URL:
