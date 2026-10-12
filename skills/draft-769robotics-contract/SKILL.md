@@ -84,6 +84,8 @@ Name customer deliverables consistently:
 
 Use uppercase customer and product names in filenames. Use a two-digit quantity such as `01` or `02`. Omit the product segment only when no product has been identified.
 
+Do not include `DỰ THẢO`, `dự thảo`, `draft`, or equivalent draft-status labels in customer deliverable filenames or Drive titles, even while the document is being prepared. Track draft/signing status separately; a filename without a draft label does not establish signing, approval, payment, or completion.
+
 ## Single rental Master rule
 
 - Use only the rental Master identified above for every customer rental contract.
@@ -122,7 +124,7 @@ Resolve an existing customer working document from the exact user-provided link 
 
 1. Ground the customer-contract folder and the exact purchase contract or single rental Master Doc with Drive metadata before any write. For a rental, also ground the rental-template library and README.
 2. Read the template and collect the customer-specific facts needed for the draft. Do not modify the template.
-3. Duplicate the template. Give the copy a customer-specific draft title.
+3. Duplicate the template. Give the copy a customer-specific title following the canonical filename pattern, without a draft-status label.
 4. Find or create the recognizable customer/deal subfolder inside `Hợp đồng cho Khách hàng` using the customer-short + products + compact-dates rule, then move the duplicate into it. Add the verified destination parent and remove only the duplicate's verified previous parent. Preserve unrelated parents.
 5. Verify that the duplicate is a native Google Doc inside the intended recognizable customer/deal subfolder before editing contract content.
 6. Edit only the duplicate. Preserve the source template and every other item in the main folder.
