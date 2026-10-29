@@ -13,13 +13,15 @@ Contract drafting rules reconciled 2026-10-07 under the owner's explicit setup a
 7. Omit the complete additional-programming article unless specified; renumber articles and cross-references. Do not retain an empty title.
 8. Where the rental guide's overtime rounding conflicts with the designated Master, preserve the Master's actual-time/no-rounding default; explicit customer terms override it. Do not add rounded charges from the guide alone.
 
+9. As authorized on 29 October 2026, detailed rental/sales and comparison quotations default to separate customer-specific native Google Sheets with visible editable price inputs, native optional-add-on checkboxes, and formulas. This supersedes the static-Docs-only quotation output rule. Designated quotation Docs remain verified content/design/terms sources; both canonical price Sheets remain protected price sources. No additional template binding is required for creating the customer workbook. Follow `skills/draft-769robotics-contract/references/editable-quotation-tables.md`. Charge package items once at their confirmed scope, separate mutually exclusive options, and recalculate all dependent amounts. Contracts and acceptance minutes remain native Docs; optional Doc/PDF quotation exports are static snapshots.
+
 ## Required private bindings by mode
 
 Every task fetches the approved GitHub revision afresh and checks source identity, access and content in Drive. The example profile contains nulls by design and is never live configuration.
 
 - All document modes: private profile, verified seller legal identity and representative, authorized target root/folder, supplied or verified customer scope, relevant native template
 - Rental contract: rental README, rental Master, both current price Sheets for applicable product checks
-- Detailed rental/sales quotation: designated quotation Doc and both current price Sheets
+- Detailed rental/sales and comparison quotation: designated quotation Doc as verified content/design/terms source and both current price Sheets; create a separate customer calculation workbook under the verified quotation deal folder
 - Purchase contract: designated purchase template and current product/price Sheets
 - Acceptance/liquidation: acceptance master, acceptance guide, actual contract and verified outcomes
 - Customer registry and exception registry are optional for directly identified customer documents; resolve explicit task/customer evidence rather than fabricate a registry. Missing registry blocks only operations that depend on it
