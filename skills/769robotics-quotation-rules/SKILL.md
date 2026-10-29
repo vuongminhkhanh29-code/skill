@@ -13,7 +13,13 @@ Use these standing user preferences alongside the original contract workflow whe
 
 - Always treat every price and total supplied by the user as BEFORE VAT. Do not ask whether VAT is included. Override only when the user explicitly specifies another basis.
 - Show the service subtotal, discount, net before VAT, VAT rate and amount, and total payable separately. Verify the applicable VAT rate from current authoritative sources; do not turn a template's rate into a permanent assumption.
-- When the user authorizes allocating a discount to reach a target, distribute the discount across each product. In each product's unit-price cell show the old price with native strikethrough on the first line and the new discounted price below it. Use the discounted price for that product's line total. Do not add a separate package-discount row. Use grounded base prices, do not invent unsupported logistics charges or durations, and check every sum.
+- When the user authorizes allocating a discount to reach a target, distribute the discount across each product. In editable quotation Sheets, show the old numeric price struck through in a separate column beside the editable actual numeric price; keep formula inputs numeric. In a static Doc snapshot, show the old price struck through above the new price in the same cell. Use the discounted price for that product's line total. Do not add a separate package-discount row. Use grounded base prices, do not invent unsupported logistics charges or durations, and check every sum.
+
+## Editable quotation tables
+
+- Deliver detailed rental/sales and comparison quotations as customer-specific native Google Sheets by default. Follow `../draft-769robotics-contract/references/editable-quotation-tables.md` from the same approved revision.
+- Put editable numeric prices and native Boolean add-on checkboxes directly in the visible table; compute line totals, discounts, VAT, payable totals and installments with formulas. Charge package/booking items once at their confirmed scope; never multiply them by rental days automatically. Calculate each comparison option independently; do not sum alternative options.
+- Preserve source verification, destinations, confirmed business terms and sharing. Canonical price Sheets remain protected sources. A Doc/PDF is a static snapshot, not a live calculator.
 
 ## Payment
 
