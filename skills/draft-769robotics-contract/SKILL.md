@@ -67,13 +67,13 @@ Reference contents and customer records live in Drive. This repository does not 
 
 Use the two quotation templates, the purchase-contract template, and the single rental-contract Master:
 
-1. Call `bảng báo giá chi tiết cho thuê` -> duplicate the canonical rental quotation document template as a native Google Doc.
-2. Call `bảng báo giá chi tiết bán` or `bảng báo giá chi tiết mua` -> duplicate the canonical sales quotation document template as a native Google Doc.
+1. Call `bảng báo giá chi tiết cho thuê` or `báo giá so sánh` -> create an editable customer-specific native Google Sheet using the verified rental quotation Doc's identity, sections and terms and the current price sources; follow `references/editable-quotation-tables.md`.
+2. Call `bảng báo giá chi tiết bán` or `bảng báo giá chi tiết mua` -> create an editable customer-specific native Google Sheet using the verified sales quotation Doc and current price sources; follow `references/editable-quotation-tables.md`.
 3. Call `hợp đồng cho thuê` or `hợp đồng thuê` -> read the rental README, then duplicate the single approved rental Master as a native Google Doc. Do not ask who owns or supplies the robot and do not route by source.
 4. Call `hợp đồng mua bán` or `hợp đồng bán` -> duplicate `MẪU - HỢP ĐỒNG - MUA BÁN ROBOT - 769 ROBOTICS` as a native Google Doc.
 5. Call `biên bản nghiệm thu`, `biên bản thanh lý`, or `biên bản nghiệm thu và thanh lý` -> read the Drive reference bound by `profile.references.acceptance_minutes_guide`, then duplicate the approved acceptance/liquidation template as a native Google Doc. Keep the master unchanged.
 
-Always deliver a newly requested customer `bảng báo giá chi tiết` as a native Google Doc. Use the two designated quotation Docs above even though their current Drive filenames begin with `MẪU CŨ - KHÔNG DÙNG`; that filename prefix does not disqualify these two specifically identified canonical quotation templates. Continue using both quotation Sheets only as current product and price sources, never as the customer-facing quotation deliverable.
+Deliver detailed rental/sales and comparison quotations as editable native Google Sheets by default, with native formulas and optional-add-on checkboxes directly in the table. Read and apply `references/editable-quotation-tables.md` before every quotation write. This owner-authorized rule of 29 October 2026 replaces the former Docs-only quotation output requirement. The designated quotation Docs remain verified sources for identity, visual design, sections and terms, despite any old/do-not-use filename. Both canonical price Sheets remain protected source data, never customer deliverables. Create a separate customer workbook. A specifically requested Doc/PDF is a static snapshot; do not claim it recalculates.
 
 Name customer deliverables consistently:
 
@@ -117,15 +117,14 @@ Resolve an existing customer working document from the exact user-provided link 
 
 ## Detailed quotation workflow
 
-1. Ground the customer-quotation folder and the exact canonical rental or sales quotation Doc with Drive metadata before any write.
-2. Read both canonical quotation Sheets for the mandatory real-time product check.
-3. Duplicate the selected canonical quotation Doc. Never use a Google Sheet as the customer-facing detailed quotation.
-4. Give the duplicate its customer filename using the canonical naming convention.
-5. Find or create the recognizable customer/deal subfolder inside `Bảng báo giá cho Khách hàng` using the customer-short + products + compact-dates rule, then move the duplicate into it. Add the verified destination parent and remove only the duplicate's verified previous parent. Preserve unrelated parents.
-6. Verify the duplicate is a native Google Doc inside the intended recognizable customer/deal subfolder before editing its content.
-7. Edit only the duplicate. Preserve its tables, paragraphs, images, headers, footers, formatting, and print layout unless the user's requested content requires a scoped change.
-8. Verify duplicate sharing against the explicitly authorized audience; keep private when no audience is authorized.
-9. Read back the complete document, Drive metadata, file type, destination parent, and sharing state before reporting completion.
+1. Verify the quotation destination, relevant designated quotation Doc, seller/customer scope and both current price Sheets; retain all source/readiness and payment-consistency gates.
+2. Read `references/editable-quotation-tables.md`. Create a separate native Google Sheets customer workbook with the source Doc's relevant content and visual identity; do not edit or duplicate a source price Sheet as the deliverable.
+3. Reuse or create the recognizable customer/deal subfolder and place the workbook there using the canonical customer/model/date naming pattern. Verify MIME type and parent before content edits.
+4. Build visible editable numeric prices, Boolean add-on checkboxes, explicit daily/package charge bases, and formulas for each line, discounts, VAT, total and installments. Calculate alternative options independently.
+5. Verify permissions without expanding the audience. Use warning-only protection for formula cells, keeping intended inputs editable by existing authorized editors.
+6. Run the reference's price-change, checkbox, package/day, option-independence and payment-boundary checks. Restore the intended values/selections and remove task-created QA artifacts.
+7. Run the placeholder and final error scans, inspect all native formulas and computed values, export and inspect the customer-facing pages, then read back the full workbook, metadata and sharing before delivery.
+8. Provide the verified editable Sheet link and brief input instructions. If a Doc/PDF is requested, create a static snapshot of the verified current selections and label it accordingly.
 
 ## Contract drafting workflow
 
@@ -270,13 +269,13 @@ Use direct edits only on an existing customer document that the user explicitly 
 - Include the confidentiality clause: “Hai bên bảo mật thông tin kỹ thuật, tài chính và tài liệu không công khai.” For advertising/portfolio use of event photos or video, state “Quyền Bên A sử dụng hình ảnh/video sự kiện cho quảng cáo/portfolio: Hai bên thỏa thuận sau.” when the parties have agreed to settle permission later; do not leave `[CHƯA CUNG CẤP]` for that decision.
 - Treat user-supplied prices as before VAT unless explicitly stated otherwise. Verify applicable VAT from current authoritative sources for the transaction; a template rate is not a permanent tax rule. Drafting a contract does not itself issue a VAT invoice. Never knowingly understate consideration, omit supplied goods or services to conceal payment, fabricate invoices, or hide business receipts. Record personal payments accurately and distinguish refundable personal deposits from separate consideration.
 - Calculate and fill the pre-VAT total, VAT amount, and VAT-inclusive total.
-- When a quotation includes both an original price and a lower discounted or promotional price, show both prices in the same unit-price cell: put the original price on the first line with strikethrough, then put the discounted price directly below it in bold without strikethrough.
+- For a static Doc quotation snapshot, when a quotation includes both an original price and a lower discounted or promotional price, show both prices in the same unit-price cell: put the original price on the first line with strikethrough, then put the discounted price directly below it in bold without strikethrough.
 - Use only the discounted price to calculate line totals, pre-VAT totals, VAT, and the VAT-inclusive total. Do not apply this two-line treatment when no discount is confirmed by the user or an authoritative current price source.
 - Put each product on its own table row. Insert additional product rows as needed; never place multiple products in one cell.
 - Use sequential values in the `STT` column and put the corresponding product, quantity, rental-day count, and price on the same row.
 - In the `Thời gian thuê (ngày)` column, enter only the numeric value such as `1`; do not repeat `ngày` because it is already present in the column label.
 - Treat a time stated as `9h`, `09h`, or `09:00` as a start time unless the user explicitly describes it as a duration.
-- Preserve the template's table formatting when inserting product rows, then verify row count, column count, and every cell through connector readback.
+- Preserve the template's table formatting when inserting product rows in Docs. For editable quotation Sheets use the numeric-column design in `references/editable-quotation-tables.md`; verify row/column count, every cell, formulas and checkbox validation through connector readback.
 
 ## Non-negotiable write safety
 
