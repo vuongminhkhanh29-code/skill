@@ -32,3 +32,7 @@ A repository link alone does not install a skill, grant Drive access, or overrid
 Use each employee's own accounts. Department repositories and least-privilege Drive access can be added later; no department-level permissions are established by this README.
 
 The owner's cloud entry and each employee/device are separate installations. Report current runtime verification honestly; a README alone is not proof of installation. Never publish private profile values or source IDs here.
+
+## Acceptance minutes typography
+
+Use Times New Roman only throughout acceptance/liquidation minutes and their reusable Google Docs/Word templates, including titles, tables, numbered clauses, signatures, headers and footers. Normalize Word defaults, styles and all font slots; remove conflicting theme font references. Preserve content, sizes, emphasis and layout during font-only edits. Verify fonts and rendered pages before delivery. Source-template changes still require explicit user authorization.
