@@ -5,6 +5,10 @@ description: Safely draft and revise 769Robotics detailed rental or sales quotat
 
 # Draft 769Robotics Contract
 
+## Quotation format — owner correction, 10 November 2026
+
+Detailed rental/sales and comparison quotations default to native Google Docs, duplicated from the designated quotation template. Preserve its branding, party-information boxes, native tables, typography and sections. Create Google Sheets only when the current request explicitly asks for Sheets/a spreadsheet or a separate live calculator. A historical request for formulas or optional checkboxes does not change this default. This rule supersedes every 29 October 2026 Sheets-default instruction below or in linked references. Both canonical price Sheets remain protected sources. Do not require a customer Sheet before creating Docs. Calculate alternatives independently, charge packages once, and show original prices struck through above bold discounted prices in the same unit-price cell. Never claim a Docs table recalculates automatically.
+
 GitHub is the canonical workflow source. Load `../../profiles/769robotics.example.json` as the binding contract, not as live source data. Apply the reconciled rules in `../../MIGRATION.md` and verify the private Drive profile and mode-specific sources before each task. A successfully configured owner runtime does not grant access to another user or device.
 
 Protect the source library while creating customer-specific contracts and selecting supported workspace sources.
