@@ -1,5 +1,9 @@
 # Editable quotation tables
 
+## Quotation format — owner correction, 10 November 2026
+
+Detailed rental/sales and comparison quotations default to native Google Docs, duplicated from the designated quotation template. Preserve its branding, party-information boxes, native tables, typography and sections. Create Google Sheets only when the current request explicitly asks for Sheets/a spreadsheet or a separate live calculator. A historical request for formulas or optional checkboxes does not change this default. This rule supersedes every 29 October 2026 Sheets-default instruction below or in linked references. Both canonical price Sheets remain protected sources. Do not require a customer Sheet before creating Docs. Calculate alternatives independently, charge packages once, and show original prices struck through above bold discounted prices in the same unit-price cell. Never claim a Docs table recalculates automatically.
+
 Use a customer-specific native Google Sheet for detailed rental/sales quotations by default. This is the owner's 29 October 2026 replacement of the static-Docs-only quotation rule. Apply it to comparison quotations and ordinary detailed quotations. Contracts and acceptance minutes remain native Docs. Never promise that a Docs table, PDF, printed checkbox, or linked table recalculates automatically.
 
 ## Source and destination
