@@ -5,6 +5,10 @@ description: Apply the user's standing price, payment, naming and folder rules w
 
 # 769 Robotics quotation rules
 
+## Quotation format — owner correction, 10 November 2026
+
+Detailed rental/sales and comparison quotations default to native Google Docs, duplicated from the designated quotation template. Preserve its branding, party-information boxes, native tables, typography and sections. Create Google Sheets only when the current request explicitly asks for Sheets/a spreadsheet or a separate live calculator. A historical request for formulas or optional checkboxes does not change this default. This rule supersedes every 29 October 2026 Sheets-default instruction below or in linked references. Both canonical price Sheets remain protected sources. Do not require a customer Sheet before creating Docs. Calculate alternatives independently, charge packages once, and show original prices struck through above bold discounted prices in the same unit-price cell. Never claim a Docs table recalculates automatically.
+
 Use the reconciled mode-specific readiness rules in `../../MIGRATION.md`. Customer-specific exceptions remain in Drive and must be resolved from the relevant verified customer record before use.
 
 Use these standing user preferences alongside the original contract workflow when available. This supplementary skill does not replace missing templates or invent previous workflow instructions.
