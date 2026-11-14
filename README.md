@@ -1,3 +1,12 @@
+# ⚠️ Đã chuyển — repo này không còn cập nhật
+
+Từ 14/11/2026, 4 skill của 769 Robotics (báo giá, hợp đồng, deal, điều phối) được quản lý trong repo riêng tư **`vuongminhkhanh29-code/769os`**, thư mục `plugins/robotics-sales/`, cùng toàn bộ đội agent 769.
+
+- Bản gốc duy nhất: `769os`. Mọi sửa đổi làm ở đó, qua agent `769-hr`.
+- Nội dung bên dưới là bản cũ ngày 10/11/2026, giữ lại để tham khảo. **Agent không được dùng bản này làm nguồn chỉ dẫn nữa.**
+
+---
+
 # 769 Robotics shared business skills
 
 ## Quotation format — owner correction, 10 November 2026
