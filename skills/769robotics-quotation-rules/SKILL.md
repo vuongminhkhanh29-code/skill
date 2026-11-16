@@ -5,6 +5,11 @@ description: Apply the user's standing price, payment, naming and folder rules w
 
 # 769 Robotics quotation rules
 
+## Owner correction — 16 November 2026
+
+- Use the default overtime rate of VND 7,000,000/hour, before VAT, for new rental quotations and contracts unless the user explicitly specifies a different rate for that booking. Preserve the actual-time/no-rounding billing rule. Do not retroactively amend other customer documents.
+- Classify robot violin playing (kéo violin / chơi đàn violin), including simulated playing movements, as `Lập trình`, overriding the generic `Cấu hình` default. Describe the agreed violin motion/programming scope; do not promise note-perfect playing, completed development, or successful testing without evidence. This classification alone does not add a separate charge or an additional-programming article.
+
 ## Quotation format — owner correction, 10 November 2026
 
 Detailed rental/sales and comparison quotations default to native Google Docs, duplicated from the designated quotation template. Preserve its branding, party-information boxes, native tables, typography and sections. Create Google Sheets only when the current request explicitly asks for Sheets/a spreadsheet or a separate live calculator. A historical request for formulas or optional checkboxes does not change this default. This rule supersedes every 29 October 2026 Sheets-default instruction below or in linked references. Both canonical price Sheets remain protected sources. Do not require a customer Sheet before creating Docs. Calculate alternatives independently, charge packages once, and show original prices struck through above bold discounted prices in the same unit-price cell. Never claim a Docs table recalculates automatically.
