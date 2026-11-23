@@ -102,6 +102,14 @@ Do not include `DỰ THẢO`, `dự thảo`, `draft`, or equivalent draft-status
 - Do not use historical supplier-specific contracts to select or alter the customer template.
 - Treat the Master and README as protected sources. Duplicate only; never edit them while creating a customer contract.
 
+## Rental runtime and charging
+
+For rental contracts, use the approved Drive Master with numbered and indented Phụ lục 01. Keep per-model runtime and charging figures in the approved reference. On the customer copy, add the figures for each exact rented model directly below the Điều 2 product and pricing table.
+
+Show `Sử dụng mỗi lần sạc` and `Thời gian sạc` once per distinct contracted model, in Điều 2 order. Where the layout differs, place the lines beside the product list or before the rental schedule in Điều 3. Use the authorized data for the exact model, battery, and charger. Omit `khoảng`, retain source limits and conditions, label the figures as planning references, and use `Cần xác nhận` for unresolved values. Check the model names and values before delivery.
+
+Keep the Drive Master and its appendix free of the model timing table and timing placeholders. Preserve the approved appendix wording, indentation, and cross-references. Use model information from Điều 2 to agree on operating, charging, and cooling breaks. Do not offer spare-battery swaps to continue through a scheduled cooling break.
+
 ## Mandatory real-time product information check
 
 - Before drafting or revising any contract or quotation containing product information, read both canonical quotation Sheets on the same calendar day as the draft, using the user's local timezone. Do not rely on a prior read, cached value, older contract, customer quotation, example, or memory.
