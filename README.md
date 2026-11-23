@@ -30,6 +30,10 @@ Customer document filenames and Drive titles must omit `DỰ THẢO` / `draft` l
 
 Create detailed rental/sales and comparison quotations as separate customer-specific native Google Sheets with editable prices, native optional-add-on checkboxes, and formulas for totals, VAT and installments. Apply the [editable quotation table rules](skills/draft-769robotics-contract/references/editable-quotation-tables.md). Package charges apply once at their confirmed scope; each alternative option has its own total. Keep source templates and price Sheets unchanged. Docs/PDFs are static snapshots; contracts and acceptance minutes remain native Docs.
 
+## Rental runtime and charging
+
+For rental contracts, use the approved Drive Master with numbered and indented Phụ lục 01. Keep per-model runtime and charging figures in the approved reference. On the customer copy, add the figures for each exact rented model directly below the Điều 2 product and pricing table. See the [contract drafting workflow](skills/draft-769robotics-contract/SKILL.md#rental-runtime-and-charging).
+
 ## Rental payment schedule
 
 Apply the same rental payment schedule in quotations and contracts. Use three installments (50% deposit on confirmation / 30% supplementary deposit at the confirmed rehearsal or intermediate milestone before the main performance / 20% balance after completion) ONLY when BOTH conditions hold: (1) more than 2 confirmed deployment days, including scheduled rehearsal days; AND (2) total value before VAT strictly exceeds VND 100,000,000. Otherwise use two installments: 50% deposit on confirmation / 50% balance after completion. Exactly 2 days or exactly VND 100,000,000 does not qualify. This supersedes the old OR/multiple-event trigger and abolishes the exact-VND60m exception. Do not infer missing days or values; preserve unconfirmed inputs and ask only when necessary to choose the schedule. For a qualifying three-installment case, confirm the intermediate milestone rather than inventing one. Calculate installment amounts from the VAT-inclusive total.
